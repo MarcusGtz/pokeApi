@@ -1,0 +1,56 @@
+<p>by-pokemons-page works!</p>
+
+<!-- Por capital -->
+
+<h2>Pokemones</h2>
+
+<hr>
+
+<div class="row">
+  <div class="col">
+    <!-- search -->
+    <shared-search
+    (onValue)="searchByPokemon($event)"
+    placeholder="Busca por pokemon"></shared-search>
+
+  </div>
+</div>
+
+<hr>
+
+<div class="row">
+  <div class="col-md-3 colsm-6">
+      <div *ngFor="let poke of pokemons">
+        <div *ngIf="poke.sprites" class="card mb-2 text-center bg-dark">
+          <img [src]="poke.sprites.front_default" [alt]="poke.name" class="card-img-top">
+        </div>
+        {{poke.name}}
+      </div>
+
+  </div>
+</div>
+
+<!-- si mostramos mas de un pokemon -->
+<div *ngIf="pokemons[0]" class="row">
+  <div *ngIf="pokemons[0].results"  class="col-md-3 colsm-6"> <!-- divide la pantalla de las card en 12 y en pantalals chivcas 6-->
+      <div *ngFor="let poke of pokemons[0].results">
+        <!-- <div *ngIf="poke.sprites" class="card mb-2 text-center bg-dark"> -->
+          <!-- <img [src]="poke.sprites.front_default" [alt]="poke.name" class="card-img-top"> -->
+          {{poke.name}}
+          {{poke.url}}
+      </div>
+  </div>
+</div>
+<!-- <div class="row">
+  <div class="col">
+    <hr>
+    <ul>
+      <li *ngFor="let poke of pokemons">
+        {{poke.name}}
+      </li>
+    </ul>
+
+  </div>
+</div> -->
+
+
