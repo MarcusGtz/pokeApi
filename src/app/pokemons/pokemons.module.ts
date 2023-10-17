@@ -5,6 +5,9 @@ import { ByBerriesPageComponent } from './pages/by-berries-page/by-berries-page.
 import { PokemonsPageComponent } from './pages/pokemons-page/pokemons-page.component';
 import { PokemonsRoutingModule } from './pokemons-routing.module';
 import { SharedModule } from '../shared/shared.module';
+import { PokemonsTableComponent } from './components/pokemons-table/pokemons-table.component';
+import { BerriesTableComponent } from './components/berries-table/berries-table.component';
+import { BerriesPageComponentComponent } from './pages/berries-page-component/berries-page-component.component';
 
 
 
@@ -12,7 +15,10 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [
     ByPokemonsPageComponent,
     ByBerriesPageComponent,
-    PokemonsPageComponent
+    PokemonsPageComponent,
+    PokemonsTableComponent,
+    BerriesTableComponent,
+    BerriesPageComponentComponent,
   ],
   imports: [
     CommonModule,

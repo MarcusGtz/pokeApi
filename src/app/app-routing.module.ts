@@ -19,6 +19,10 @@ const routes: Routes = [
     component: ContactPagesComponent
   },
   {
+    path: 'by/:id',
+    component: PokemonsPageComponent
+  },
+  {
     path: 'pokemons',
     loadChildren: () => import('./pokemons/pokemons.module').then(modulo => modulo.PokemonsModule )
   },

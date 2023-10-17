@@ -1,1 +1,49 @@
 <p>pokemons-page works!</p>
+
+
+<ng-template #loading>
+  <div class="alert alert-loading text-center">
+    Espere por favor
+  </div>
+</ng-template>
+
+
+<div *ngIf="pokemon; else loading">
+
+  <div class="row">
+    <div class="col-12">
+      <h2>Pokemon buscado: <strong> {{pokemon?.name | uppercase}} </strong></h2>
+      <hr>
+    </div>
+  </div>
+
+  <div class="row">
+    <img class="col-4">
+      <h3>Nombre: {{pokemon.name}}</h3>
+      <img [src]="pokemon.sprites.front_default" alt="pokemon.name" class="img-thumbnail">
+      <div class="col">
+        <ul class="list-group">
+          <li class="list-group-item">
+            <strong>id</strong> {{pokemon.id}}
+          </li>
+          <li class="list-group-item">
+            <strong>Height</strong> {{pokemon.height}}
+          </li>
+          <li class="list-group-item">
+            <strong>Generacion:</strong> {{pokemon.generation?.name}}
+          </li>
+        </ul>
+      </div>
+  </div>
+
+  <div class="row mt-2">
+    <div class="col">
+      <h3>Habiliidades:</h3>
+      <div class="d-flex flex-wrap">
+        <span class="badge bg-primary m-1"> {{pokemon.abilities[0].ability.name}}</span>
+        <span class="badge bg-primary m-1"> {{pokemon.abilities[1]?.ability.name}}</span>
+      </div>
+    </div>
+  </div>
+
+</div>

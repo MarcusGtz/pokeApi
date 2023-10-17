@@ -1,0 +1,49 @@
+<p>berries-page-component works!</p>
+
+<ng-template #loading>
+  <div class="alert alert-info text-center">
+    Espere por favor. cargando berries
+  </div>
+</ng-template>
+
+<div *ngIf="berry; else loading">
+  <div class="row">
+    <div class="col-12">
+      <h2> Berry <strong> {{berry?.name}} </strong> </h2>
+      <hr>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-6">
+
+
+      <div class="col">
+      <ul class="list-group">
+        <li class="list-group-item">
+          <strong>ID</strong> {{berry.id}}
+        </li>
+        <li class="list-group-item">
+          <strong>growth_time</strong> {{berry.growth_time}}
+        </li>
+        <li class="list-group-item">
+          <strong>max_harvest</strong> {{berry.max_harvest}}
+        </li>
+        <li class="list-group-item">
+          <strong>natural_gift_power</strong> {{berry.natural_gift_power}}
+        </li>
+        <li class="list-group-item">
+          <strong>size</strong> {{berry.size}}
+        </li>
+        <li class="list-group-item">
+          <strong>smoothness</strong> {{berry.smoothness}}
+        <li class="list-group-item">
+          <strong>soil_dryness</strong> {{berry.soil_dryness}}
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  </div>
+</div>

@@ -1,0 +1,30 @@
+
+
+
+<div *ngIf="pokemones.length === 0; else table" class="alert alert-warning text-center">
+  no hay pokemons que mostrar
+</div>
+
+<ng-template #table>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nombre</th>
+        <th>URL</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let poke of pokemones[0].results; let i = index">
+        <td> {{ i + 1  }} </td>
+        <td>
+          {{ poke.name}}
+        </td>
+        <td>
+          <a [routerLink]=" ['/pokemons/by/',poke.name] ">Ver mas</a>
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+</ng-template>

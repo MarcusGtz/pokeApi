@@ -1,0 +1,32 @@
+
+<div *ngIf="berry.length === 0; else tableBerry" class="alert alert-warning text-center">
+  no hay berry que mostrar
+</div>
+
+<ng-template #tableBerry>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nombre</th>
+        <th>ID</th>
+        <th>Info</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let berry of berry[0].results; let i = index">
+        <td> {{ i + 1  }} </td>
+        <td>
+          {{ berry.name}}
+        </td>
+        <td>
+          {{ berry.id}}
+        </td>
+        <td>
+          <a [routerLink]=" ['/pokemons/byBerry/',berry.name] ">Ver mas</a>
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+</ng-template>

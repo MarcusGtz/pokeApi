@@ -1,1 +1,26 @@
 <p>by-berries-page works!</p>
+
+<h2>Berries</h2>
+<hr>
+
+<div class="row">
+  <div class="col">
+    <!-- search -->
+    <shared-search
+    (onValue)="searchByBerry($event)"
+    placeholder="Busca por berry"></shared-search>
+
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col">
+    <hr>
+
+    <berries-table [berry]="berry"></berries-table>
+
+  </div>
+</div>
+
+
