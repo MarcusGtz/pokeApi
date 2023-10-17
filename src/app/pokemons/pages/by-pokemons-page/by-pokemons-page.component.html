@@ -14,26 +14,36 @@
 
 
 <!-- NUEVO] -->
-<div class="row">
+<!-- <div *ngIf="pokemons" class="row">
   <div class="col-md-3 colsm-6">
       <div *ngFor="let poke of pokemons">
         <div *ngIf="poke.sprites" class="card mb-2 text-center bg-dark">
           <img [src]="poke.sprites.front_default" [alt]="poke.name" class="card-img-top">
         </div>
         {{poke.name}}
+        <ul>
+          <li>Nombre: {{poke.name}}</li>
+        </ul>
+        <ul>
+          <li>Id: {{poke.id}}</li>
+        </ul>
+        <ul>
+          <li>{{poke.id}}</li>
+        </ul>
+
       </div>
 
   </div>
-</div>
+</div> -->
 
-<!-- si mostramos mas de un pokemon -->
+<!-- si mostramos mas de un pokemon 7 o buscamos por id -->
 <div *ngIf="pokemons[0]" class="row">
   <div *ngIf="pokemons[0].results"  class="col-md-3 colsm-6"> <!-- divide la pantalla de las card en 12 y en pantalals chivcas 6-->
       <div *ngFor="let poke of pokemons[0].results">
-        <!-- <div *ngIf="poke.sprites" class="card mb-2 text-center bg-dark"> -->
-          <!-- <img [src]="poke.sprites.front_default" [alt]="poke.name" class="card-img-top"> -->
-          <!-- {{poke.name}}
-          {{poke.url}} -->
+        <div *ngIf="poke.sprites" class="card mb-2 text-center bg-dark">
+          <img [src]="poke.sprites.front_default" [alt]="poke.name" class="card-img-top">
+           {{poke.name}}
+          {{poke.url}}
       </div>
 </div>
 </div>
