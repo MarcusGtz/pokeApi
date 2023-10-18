@@ -19,30 +19,36 @@
 
   <div class="row">
     <div class="col-4">
-      <h3>Nombre: {{pokemon.name}}</h3>
-      <img [src]="pokemon.sprites.front_default" alt="pokemon.name" class="img-thumbnail">
-      <img [src]="pokemon.sprites.back_default" alt="pokemon.name" class="img-thumbnail">
-      <img [src]="pokemon.sprites.front_shiny" alt="pokemon.name" class="img-thumbnail">
+      <h3>Nombre: {{pokemon[0].name}}</h3>
+      <img [src]="pokemon[0].sprites.front_default" alt="pokemon[0].name" class="img-thumbnail">
+      <img [src]="pokemon[0].sprites.back_default" alt="pokemon[0].name" class="img-thumbnail">
+      <img [src]="pokemon[0].sprites.front_shiny" alt="pokemon[0].name" class="img-thumbnail">
     </div>
       <div class="col">
         <h5>Info:</h5>
         <ul class="list-group">
           <li class="list-group-item">
-            <strong>id</strong> {{pokemon.id}}
+            <strong>id</strong> {{pokemon[0].id}}
           </li>
           <li class="list-group-item">
-            <strong>Height</strong> {{pokemon.height}}
+            <strong>Height</strong> {{pokemon[0].height}}
           </li>
           <li class="list-group-item">
-            <strong>Generacion:</strong> {{pokemon.generation?.name}}
+            <strong>Generacion:</strong> {{pokemon[1].generation?.name}}
           </li>
         </ul>
         <hr>
+        <h5>Efectos:</h5>
+        <div class="d-flex flex-wrap">
+          <span class="badge bg-primary m-1"> {{pokemon[1].effect_entries[0].effect}}</span>
+          <span class="badge bg-primary m-1"> {{pokemon[1].effect_entries[0].short_effect }}</span>
+        </div>
+        <hr>
         <h5>Habiliidades:</h5>
         <div class="d-flex flex-wrap">
-          <span class="badge bg-primary m-1"> {{pokemon.abilities[0].ability.name}}</span>
-          <span class="badge bg-primary m-1"> {{pokemon.abilities[1]?.ability.name}}</span>
-  </div>
+          <span class="badge bg-success m-1"> {{pokemon[0].abilities[0].ability.name}}</span>
+          <span class="badge bg-success m-1"> {{pokemon[0].abilities[1]?.ability.name}}</span>
+        </div>
 
   <!-- <div class="row mt-2">
     <div class="col">
