@@ -97,6 +97,8 @@ searhPokemonByIdOrName (code: string): Observable<any[] | null | object> {
       map( pokemon =>
         // Object.keys(pokemon).length > 0 ? pokemon : 'valiooo'
         this.result = pokemon
+        // Object.keys(pokemon).length > 0 ? pokemon : 'valiooo'
+        this.result = pokemon
        ),
     );
   }

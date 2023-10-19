@@ -22,6 +22,7 @@ export class PokemonsPageComponent implements OnInit {
      ) { }
 
   ngOnInit(): void {
+    // opcion que solo carga la info basica del pokemon
     this.activatedRouter.params
     .pipe(
       switchMap( (result) => this.pokemonsService.searhPokemonByIdOrName2( result['id'] ) )
@@ -31,9 +32,11 @@ export class PokemonsPageComponent implements OnInit {
 
       if (!pokemon) return this.router.navigateByUrl('about');
 
-      console.log( 'tenemos pokemon!!!' );
+      console.log( 'tenemos pokemon!!!', pokemon );
       return this.pokemon = pokemon;
     } )
+
+    // nuevo intento con metodo concat
   }
 
 
