@@ -1,25 +1,27 @@
 
 
 
-<div *ngIf="pokemones.length === 0; else table" class="alert alert-warning text-center">
+<div *ngIf="pokemones.length === 0; else tablePoke" class="alert alert-warning text-center">
   no hay pokemons que mostrar
 </div>
 
-<ng-template #table>
+<ng-template #tablePoke>
   <table class="table table-hover">
     <thead>
       <tr>
+        <th></th>
+        <th></th>
         <th>#</th>
-        <th>Nombre</th>
+        <th>Nombre </th>
         <th>URL</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let poke of pokemones[0].results; let i = index">
+      <tr *ngFor="let poke of pokemones[0].results | sortBy; let i = index ">
+        <td></td>
+        <td></td>
         <td> {{ i + 1  }} </td>
-        <td>
-          {{ poke.name}}
-        </td>
+        <td>{{ poke.name | uppercase }}</td>
         <td>
           <a [routerLink]=" ['/pokemons/by/',poke.name] ">Ver mas</a>
         </td>

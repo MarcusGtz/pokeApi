@@ -95,38 +95,24 @@ searhPokemonByIdOrName (code: string): Observable<any[] | null | object> {
   return this.http.get<any>( url) // Por pokemon
     .pipe(
       map( pokemon =>
-        Object.keys(pokemon).length > 0 ? pokemon : 'valiooo'
-        // this.result = pokemon
+        // Object.keys(pokemon).length > 0 ? pokemon : 'valiooo'
+        this.result = pokemon
        ),
-      // map( pokemones => this.http.get(pokemones.abilities[0].url)
-      //   .subscribe( pokemones => {
-      //     pokemones
-      //     console.log(pokemones);
-
-      //   }
-      //     ) ),
-      catchError ( () => of([]) )
     );
   }
 
-  newPetition( code: string) {
-    this.searhPokemonByIdOrName(code).subscribe( result => {
-      console.log('RESULT', result);
-      this.result = result;
-      result
+  searhPokemonByIdOrName2 (code: string): Observable<any[] | null | object> {
+    const url = (`${this.apiUrl}/pokemon/${ code }`)
+    return this.http.get<any>( url).pipe(
+      switchMap( (pokemon) => {
+        this.result = pokemon
+        return this.http
+        .get(`${ pokemon.abilities[0].ability.url}`)
+        .pipe(
+
+          map((response) => [pokemon, response]));
+      }));
     }
-      )
-    // return this.http.get<any>( "https://pokeapi.co/api/v2/ability/2", ) // Por pokemon
-    return this.http.get<any>( `${ this.result.abilities[0].ability.url}` )
-    .pipe(
-      map( result => {
-        this.result.new = result;
-       return result = this.result;
-        // Object.keys(pokemones).length > 0 ? pokemones : null
-      } ),
-      catchError ( () => of([this.result]) )
-    );
-  }
 
 
 //  ------------------------- Bayas -------------------------------

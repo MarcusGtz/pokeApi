@@ -8,11 +8,13 @@ import { SharedModule } from '../shared/shared.module';
 import { PokemonsTableComponent } from './components/pokemons-table/pokemons-table.component';
 import { BerriesTableComponent } from './components/berries-table/berries-table.component';
 import { BerriesPageComponentComponent } from './pages/berries-page-component/berries-page-component.component';
+import { SortByPipe } from './pipes/sort-by.pipe';
 
 
 
 @NgModule({
   declarations: [
+    SortByPipe,
     ByPokemonsPageComponent,
     ByBerriesPageComponent,
     PokemonsPageComponent,

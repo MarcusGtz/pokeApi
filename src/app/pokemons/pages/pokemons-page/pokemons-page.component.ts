@@ -24,7 +24,7 @@ export class PokemonsPageComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRouter.params
     .pipe(
-      switchMap( (result) => this.pokemonsService.searhPokemonByIdOrName( result['id'] ) )
+      switchMap( (result) => this.pokemonsService.searhPokemonByIdOrName2( result['id'] ) )
     )
     .subscribe( pokemon => {
       console.log('recibi del suscribe switchMap: -->', pokemon);

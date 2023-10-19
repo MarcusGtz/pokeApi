@@ -1,6 +1,7 @@
 
+
 <div *ngIf="berry.length === 0; else tableBerry" class="alert alert-warning text-center">
-  no hay berry que mostrar
+  no hay berry que mostrar..
 </div>
 
 <ng-template #tableBerry>
@@ -14,10 +15,10 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let berry of berry[0].results; let i = index">
+      <tr *ngFor="let berry of berry[0].results | sortBy; let i = index">
         <td> {{ i + 1  }} </td>
         <td>
-          {{ berry.name}}
+          {{ berry.name | uppercase}}
         </td>
         <td>
           {{ berry.id}}
